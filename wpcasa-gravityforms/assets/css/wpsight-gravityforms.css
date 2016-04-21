@@ -1,0 +1,51 @@
+.single-listing .gform_wrapper {
+	max-width: none;
+}
+
+.gform_wrapper .wpsight-gravityforms .gform_heading {
+	margin-bottom: 0;
+}
+
+.gform_wrapper .wpsight-gravityforms .top_label .gfield_label {
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+
+.wpsight-gravityforms .top_label .gfield input[type="text"],
+.wpsight-gravityforms .top_label .gfield input[type="url"],
+.wpsight-gravityforms .top_label .gfield input[type="email"],
+.wpsight-gravityforms .top_label .gfield textarea,
+.gform_wrapper .wpsight-gravityforms .top_label .gfield_error {
+	width: 100%;
+}
+
+.gform_wrapper .wpsight-gravityforms div.validation_error {
+    color: red;
+    font-size: inherit;
+    font-weight: normal;
+    margin: 20px 0;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.gform_wrapper .wpsight-gravityforms li.gfield.gfield_error.gfield_contains_required {
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+
+.gform_wrapper .wpsight-gravityforms li.gfield.gfield_error,
+.gform_wrapper .wpsight-gravityforms li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+	border: 0;
+}
+
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=text],
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=url],
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=email],
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=tel],
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=number],
+.gform_wrapper .wpsight-gravityforms li.gfield_error input[type=password],
+.gform_wrapper .wpsight-gravityforms li.gfield_error textarea {
+	border-color: transparent;
+}
