@@ -32,6 +32,8 @@ class WPSight_Gravity_Forms_Admin {
 	 *	@since 1.0.0
 	 */
 	public function options( $options ) {
+        $icon = 'dashicons dashicons-email';
+        $name = __( 'Gravity Forms', 'wpcasa-gravityforms' );
 
 		// Prepare forms option
 		$forms = array( '' => __( 'None', 'wpcasa-gravityforms' ) );
@@ -42,7 +44,14 @@ class WPSight_Gravity_Forms_Admin {
 		}
 
 		$options_gravity = array(
-
+            'gravityforms_pageheading' => array(
+                'name' 		=> $name,
+                'desc' 		=> '',
+                'icon'		=> $icon,
+                'link'		=> 'https://docs.wpcasa.com/article/wpcasa-gravityforms/',
+                'id' 		=> 'gravity_pageheading',
+                'type' 		=> 'pageheading'
+            ),
 			'gravityforms_listing_form_id' => array(
 				'name'		=> __( 'Listing Form', 'wpcasa-gravityforms' ),
 				'desc'		=> __( 'Select the form that you want to use on listing pages.', 'wpcasa-gravityforms' ),
@@ -82,8 +91,12 @@ class WPSight_Gravity_Forms_Admin {
 			'type'		=> 'checkbox'
 		);
 
+        if ( version_compare( '1.1.0', WPSIGHT_VERSION, '<' ) ) {
+            $name = '<span class="' . $icon . '"></span>' . $name;
+        }
+
 		$options['gravityforms'] = array(
-			__( 'Gravity Forms', 'wpcasa-gravityforms' ),
+            $name,
 			apply_filters( 'wpsight_options_gravityforms', $options_gravity )
 		);
 
