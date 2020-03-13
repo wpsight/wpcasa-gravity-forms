@@ -3,11 +3,11 @@
 Plugin Name: WPCasa Gravity Forms
 Plugin URI: https://wpcasa.com/downloads/wpcasa-gravityforms
 Description: Add support for Gravity Forms to attach property details to the contact email sent from WPCasa listing pages.
-Version: 1.0.0
+Version: 1.0.1
 Author: WPSight
 Author URI: http://wpsight.com
 Requires at least: 4.0
-Tested up to: 4.6
+Tested up to: 5.3.2
 Text Domain: wpcasa-gravityforms
 Domain Path: /languages
 
