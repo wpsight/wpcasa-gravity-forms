@@ -1,10 +1,10 @@
 === WPCasa Gravity Forms ===
-Contributors: wpsight, simonrimkus
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZRR56U2VTPZAQ
+Contributors: wpsight, kybernetikservices, mrinal013
+Donate link: https://www.paypal.com/donate/?hosted_button_id=SYJNVSP2BKTQ4
 Tags: real estate, realestate, gravity, gravity forms, gravityforms, contact form, contact, agent, listing, property, wpcasa
-Requires at least: 4.0
-Tested up to: 5.3.2
-Stable tag: 1.0.1
+Requires at least: 5.0
+Tested up to: 6.7
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,8 +19,8 @@ The WPCasa Gravity Forms add-on is a bridge plugin for the Gravity Forms form bu
 WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
 
 * Website: [wpcasa.com](https://wpcasa.com)
-* Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
-* Documentation: [docs.wpcasa.com](http://docs.wpcasa.com)
+* Demo: [demo.wpcasa.com](https://demo.wpcasa.com)
+* Documentation: [docs.wpcasa.com](https://docs.wpcasa.com)
 
 == Installation ==
 
@@ -49,13 +49,19 @@ No, this is an add-on plugin for the WPCasa real estate framework in combination
 
 == Changelog ==
 
-= 1.0.1 = 2020.03.13
-* Add: compatibility with wpcasa 1.2
+= 1.1.0 =
+* Tweak: Code improvements
+* Tweak: Tested with GravityForms 2.8.11
+* Fix: Partial wrong text domain
+* Add: support for translation on [WordPress GlotPress](https://translate.wordpress.org/projects/wp-plugins/wpcasa-gravity-forms/)
+
+= 1.0.1 =
+* Add: compatibility with WPCasa 1.2 and up
 
 = 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-* Initial release
+= 1.1.0 =
+This version supports translation from WordPress GlotPress and is tested with GravityForms 2.8.11

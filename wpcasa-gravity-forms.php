@@ -3,17 +3,12 @@
 Plugin Name: WPCasa Gravity Forms
 Plugin URI: https://wpcasa.com/downloads/wpcasa-gravityforms
 Description: Add support for Gravity Forms to attach property details to the contact email sent from WPCasa listing pages.
-Version: 1.0.1
+Version: 1.1.0
 Author: WPSight
-Author URI: http://wpsight.com
-Requires at least: 4.0
-Tested up to: 5.3.2
-Text Domain: wpcasa-gravityforms
-Domain Path: /languages
-
-	Copyright: 2015 Simon Rimkus
-	License: GNU General Public License v2.0 or later
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author URI: https://wpsight.com
+Requires at least: 5.0
+Requires Plugins: wpcasa
+Text Domain: wpcasa-gravity-forms
 */
 
 // Exit if accessed directly
@@ -39,19 +34,17 @@ class WPSight_Gravity_Forms {
 			define( 'WPSIGHT_DOMAIN', 'wpcasa' );
 
 		define( 'WPSIGHT_GRAVITYFORMS_NAME', 'WPCasa Gravity Forms' );
-		define( 'WPSIGHT_GRAVITYFORMS_DOMAIN', 'wpcasa-gravityforms' );
-		define( 'WPSIGHT_GRAVITYFORMS_VERSION', '1.0.0' );
+		define( 'WPSIGHT_GRAVITYFORMS_VERSION', '1.1.0' );
 		define( 'WPSIGHT_GRAVITYFORMS_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'WPSIGHT_GRAVITYFORMS_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 
 		if ( is_admin() ){
-			include( WPSIGHT_GRAVITYFORMS_PLUGIN_DIR . '/includes/admin/class-wpsight-gravityforms-admin.php' );
+			include( WPSIGHT_GRAVITYFORMS_PLUGIN_DIR . '/includes/admin/class-wpsight-gravity-forms-admin.php' );
 			$this->admin = new WPSight_Gravity_Forms_Admin();
 		}
 
 		// Actions
 
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_scripts' ) );
 		add_action( 'template_redirect', array( $this, 'listing_form_display' ) );
 		
@@ -86,21 +79,6 @@ class WPSight_Gravity_Forms {
 	}
 
 	/**
-	 *	load_plugin_textdomain()
-	 *	
-	 *	Set up localization for this plugin
-	 *	loading the text domain.
-	 *	
-	 *	@uses	load_plugin_textdomain()
-	 *	
-	 *	@since	1.0.0
-	 */
-
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'wpcasa-gravityforms', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
-	
-	/**
 	 *	frontend_scripts()
 	 *	
 	 *	Register and enqueue scripts and css.
@@ -117,7 +95,7 @@ class WPSight_Gravity_Forms {
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 		
 		if( is_singular( wpsight_post_type() ) && wpsight_get_option( 'gravityforms_listing_form_css' ) )
-			wp_enqueue_style( 'wpsight-gravityforms', WPSIGHT_GRAVITYFORMS_PLUGIN_URL . '/assets/css/wpsight-gravityforms' . $suffix . '.css' );
+			wp_enqueue_style( 'wpsight-gravity-forms', WPSIGHT_GRAVITYFORMS_PLUGIN_URL . '/assets/css/wpsight-gravity-forms' . $suffix . '.css', array(), WPSIGHT_GRAVITYFORMS_VERSION, 'all' );
 
 	}
 	
@@ -242,7 +220,7 @@ class WPSight_Gravity_Forms {
 	public static function default_form() {
 
 		// Get starter form
-		$file = file_get_contents( untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/wpcasa-gravityforms-starter.json' );
+		$file = file_get_contents( untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/wpcasa-gravity-forms-starter.json' );
 		
 		// Convert into array
 		$form = json_decode( $file, true );

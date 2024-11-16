@@ -33,10 +33,10 @@ class WPSight_Gravity_Forms_Admin {
 	 */
 	public function options( $options ) {
         $icon = 'dashicons dashicons-email';
-        $name = __( 'Gravity Forms', 'wpcasa-gravityforms' );
+        $name = __( 'Gravity Forms', 'wpcasa-gravity-forms' );
 
 		// Prepare forms option
-		$forms = array( '' => __( 'None', 'wpcasa-gravityforms' ) );
+		$forms = array( '' => __( 'None', 'wpcasa-gravity-forms' ) );
 		
 		foreach ( GFAPI::get_forms() as $key => $form ) {			
 			$id = $form['id'];
@@ -48,13 +48,13 @@ class WPSight_Gravity_Forms_Admin {
                 'name' 		=> $name,
                 'desc' 		=> '',
                 'icon'		=> $icon,
-                'link'		=> 'https://docs.wpcasa.com/article/wpcasa-gravityforms/',
+                'link'		=> 'https://docs.wpcasa.com/article/wpcasa-gravity-forms/',
                 'id' 		=> 'gravity_pageheading',
                 'type' 		=> 'pageheading'
             ),
 			'gravityforms_listing_form_id' => array(
-				'name'		=> __( 'Listing Form', 'wpcasa-gravityforms' ),
-				'desc'		=> __( 'Select the form that you want to use on listing pages.', 'wpcasa-gravityforms' ),
+				'name'		=> __( 'Listing Form', 'wpcasa-gravity-forms' ),
+				'desc'		=> __( 'Select the form that you want to use on listing pages.', 'wpcasa-gravity-forms' ),
 				'id'		=> 'gravityforms_listing_form_id',
 				'type'		=> 'select',
 				'options'	=> $forms
@@ -67,26 +67,26 @@ class WPSight_Gravity_Forms_Admin {
 		if( $form_id ) {
 		
 			$options_gravity['gravityforms_listing_form_display'] = array(
-				'name'		=> __( 'Form Display', 'wpcasa-gravityforms' ),
-				'desc'		=> __( 'Select where to display the listing form or choose to manually add the form via shortcode or function.', 'wpcasa-gravityforms' ),
+				'name'		=> __( 'Form Display', 'wpcasa-gravity-forms' ),
+				'desc'		=> __( 'Select where to display the listing form or choose to manually add the form via shortcode or function.', 'wpcasa-gravity-forms' ),
 				'id'		=> 'gravityforms_listing_form_display',
 				'type'		=> 'select',
 				'options'	=> array(
-					'wpsight_listing_single_after'				=> __( 'At the end', 'wpcasa-gravityforms' ),
-					'wpsight_listing_single_details_after'		=> __( 'After details', 'wpcasa-gravityforms' ),
-					'wpsight_listing_single_description_after'	=> __( 'After description', 'wpcasa-gravityforms' ),
-					'wpsight_listing_single_features_after'		=> __( 'After features', 'wpcasa-gravityforms' ),
-					'wpsight_listing_single_location_after'		=> __( 'After location', 'wpcasa-gravityforms' ),
-					'wpsight_listing_single_agent_after'		=> __( 'After agent', 'wpcasa-gravityforms' ),
-					''											=> __( 'Do not display', 'wpcasa-gravityforms' )
+					'wpsight_listing_single_after'				=> __( 'At the end', 'wpcasa-gravity-forms' ),
+					'wpsight_listing_single_details_after'		=> __( 'After details', 'wpcasa-gravity-forms' ),
+					'wpsight_listing_single_description_after'	=> __( 'After description', 'wpcasa-gravity-forms' ),
+					'wpsight_listing_single_features_after'		=> __( 'After features', 'wpcasa-gravity-forms' ),
+					'wpsight_listing_single_location_after'		=> __( 'After location', 'wpcasa-gravity-forms' ),
+					'wpsight_listing_single_agent_after'		=> __( 'After agent', 'wpcasa-gravity-forms' ),
+					''											=> __( 'Do not display', 'wpcasa-gravity-forms' )
 				)
 			);
 			
 		}
 		
 		$options_gravity['gravityforms_listing_form_css'] = array(
-			'name'		=> __( 'Form CSS', 'wpcasa-gravityforms' ),
-			'cb_label'	=> __( 'Please uncheck the box to disable the plugin from outputting CSS.', 'wpcasa-gravityforms' ),
+			'name'		=> __( 'Form CSS', 'wpcasa-gravity-forms' ),
+			'cb_label'	=> __( 'Please uncheck the box to disable the plugin from outputting CSS.', 'wpcasa-gravity-forms' ),
 			'id'		=> 'gravityforms_listing_form_css',
 			'type'		=> 'checkbox'
 		);
